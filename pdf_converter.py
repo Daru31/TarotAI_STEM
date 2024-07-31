@@ -7,7 +7,33 @@ class PDF(FPDF):
     current_y = 30
     block_num = 0
 
-    def __init__(self, name):
+    def __init__(self, name): 
+        super().__init__() 
+        self.name = name 
+        current_dir = os.path. dirname(os.path.abspath(__file__)) 
+
+        regular_font_path = os.path.join(
+            current_dir, "JetBrainMono", "JetBrainMonoNerdFont-Regular.ttf" 
+        ) 
+        bold_font_path = os.path.join(
+            current_dir, "JetBrainsMono", "JetBrainsMonoNerdFont-Bold.ttf"
+        )
+        italic_font_path = os.path.join(
+            current_dir, "JetBrainsMono", "JetBrainsMonoNerdFont-BoldItalic.ttf"
+        )
+        korean_font_path = os.path.join(
+            current_dir, "S_Core_Dream", "SCDream2.ttf" 
+        )
+        korean_bold_font_path = os.path.join(
+            current_dir, "S_Core_Dream", "SCDream5.ttf" 
+        )
+
+        self.add_font("JetBrainMono", "", regular_font_path, uni=True ) 
+        self.add_font("JetBrainMono", "B", bold_font_path , uni=True ) 
+        self.add_font("JetBrainMono", "I", italic_font_path, uni=True ) 
+        self.add_font("SCDream2", "", regular_font_path, uni=True ) 
+        self.add_font("SCDream2", "B", bold_font_path, uni=True ) 
+        
 
     def header(self):
         self.set_font("SCDream5", "", 20)
