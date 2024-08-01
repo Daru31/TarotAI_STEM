@@ -712,4 +712,4 @@ Thanks for coming.  Let's see each other again next time.  Goodbye!
     else: # 한국어라면 
         next5 = input_exit("끝내려면 Enter 키를 눌러주세요.  감사합니다.") # 감사인사 
     clear_screen()
-    time.sleep(5)
+    time.sleep(5) # 다음 사용자를 받기 위해 코드를 맨 처음부터 시작 
